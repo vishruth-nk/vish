@@ -50,7 +50,7 @@ export const Navbar = () => {
       transition={{ duration: 0.6, ease: "easeOut" }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-background/80 backdrop-blur-lg border-b border-border/50 shadow-sm"
+          ? "bg-background/60 backdrop-blur-xl border-b border-border/50"
           : "bg-transparent"
       }`}
     >
@@ -59,11 +59,12 @@ export const Navbar = () => {
           <motion.a
             href="#"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="font-display font-bold text-xl md:text-2xl text-foreground cursor-pointer"
+            className="font-bold text-xl md:text-2xl text-foreground cursor-pointer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            V<span className="gradient-text">.</span>
+            <span className="gradient-text">V</span>
+            <span className="text-foreground">.</span>
           </motion.a>
 
           {/* Desktop Navigation */}
@@ -79,7 +80,7 @@ export const Navbar = () => {
               </li>
             ))}
             <li className="ml-4">
-              <a href="/vishruth_Resume.pdf" download className="btn-accent text-sm py-2 px-4">
+              <a href="/vishruth_Resume.pdf" download className="btn-primary text-sm py-2 px-4">
                 Download CV
               </a>
             </li>
@@ -102,14 +103,14 @@ export const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-background/95 backdrop-blur-lg border-b border-border"
+            className="md:hidden bg-background/95 backdrop-blur-xl border-b border-border"
           >
             <ul className="section-container py-4 space-y-2">
               {navItems.map((item) => (
                 <li key={item.href}>
                   <button
                     onClick={() => handleNavClick(item.href)}
-                    className="block w-full text-left py-3 px-4 text-foreground/80 hover:text-foreground hover:bg-secondary/50 rounded-lg transition-colors"
+                    className="block w-full text-left py-3 px-4 text-muted-foreground hover:text-foreground hover:bg-secondary/50 rounded-lg transition-colors"
                   >
                     {item.label}
                   </button>
@@ -119,7 +120,7 @@ export const Navbar = () => {
                 <a
                   href="/vishruth_Resume.pdf"
                   download
-                  className="btn-accent text-sm py-3 w-full text-center"
+                  className="btn-primary text-sm py-3 w-full text-center"
                 >
                   Download CV
                 </a>

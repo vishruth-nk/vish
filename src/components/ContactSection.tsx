@@ -47,15 +47,15 @@ export const ContactSection = () => {
   ];
 
   return (
-    <section id="contact" className="section-padding bg-background" ref={ref}>
+    <section id="contact" className="section-padding relative" ref={ref}>
       <div className="section-container">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="text-center mb-16"
         >
-          <h2 className="font-display font-bold text-3xl md:text-4xl lg:text-5xl text-foreground mb-4">
+          <h2 className="font-bold text-3xl md:text-4xl lg:text-5xl text-foreground mb-4">
             Get in <span className="gradient-text">Touch</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -71,7 +71,7 @@ export const ContactSection = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="space-y-6"
           >
-            <h3 className="font-display font-semibold text-2xl text-foreground mb-8">
+            <h3 className="font-semibold text-2xl text-foreground mb-8">
               Contact Information
             </h3>
 
@@ -85,10 +85,13 @@ export const ContactSection = () => {
                 {info.href ? (
                   <a
                     href={info.href}
-                    className="flex items-center gap-4 p-4 rounded-xl bg-secondary/30 hover:bg-secondary/50 transition-colors group"
+                    className="flex items-center gap-4 p-4 rounded-xl bg-white/5 hover:bg-white/10 border border-transparent hover:border-primary/20 transition-all group"
                   >
-                    <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center group-hover:scale-110 transition-transform">
-                      <info.icon className="text-accent" size={24} />
+                    <div className="relative">
+                      <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-xl blur opacity-30 group-hover:opacity-50 transition-opacity" />
+                      <div className="relative w-12 h-12 rounded-xl bg-card flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <info.icon className="text-primary" size={24} />
+                      </div>
                     </div>
                     <div>
                       <p className="text-sm text-muted-foreground">{info.label}</p>
@@ -96,9 +99,12 @@ export const ContactSection = () => {
                     </div>
                   </a>
                 ) : (
-                  <div className="flex items-center gap-4 p-4 rounded-xl bg-secondary/30">
-                    <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
-                      <info.icon className="text-accent" size={24} />
+                  <div className="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-transparent">
+                    <div className="relative">
+                      <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-xl blur opacity-30" />
+                      <div className="relative w-12 h-12 rounded-xl bg-card flex items-center justify-center">
+                        <info.icon className="text-primary" size={24} />
+                      </div>
                     </div>
                     <div>
                       <p className="text-sm text-muted-foreground">{info.label}</p>
@@ -129,8 +135,8 @@ export const ContactSection = () => {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="card-glass p-8">
-              <h3 className="font-display font-semibold text-2xl text-foreground mb-6">
+            <div className="card-glass-hover p-8">
+              <h3 className="font-semibold text-2xl text-foreground mb-6">
                 Send a Message
               </h3>
 
@@ -138,7 +144,7 @@ export const ContactSection = () => {
                 <div>
                   <label
                     htmlFor="name"
-                    className="block text-sm font-medium text-foreground/80 mb-2"
+                    className="block text-sm font-medium text-muted-foreground mb-2"
                   >
                     Your Name
                   </label>
@@ -148,7 +154,7 @@ export const ContactSection = () => {
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-secondary/50 border border-border focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all text-foreground placeholder:text-muted-foreground"
+                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-foreground placeholder:text-muted-foreground"
                     placeholder="John Doe"
                   />
                 </div>
@@ -156,7 +162,7 @@ export const ContactSection = () => {
                 <div>
                   <label
                     htmlFor="email"
-                    className="block text-sm font-medium text-foreground/80 mb-2"
+                    className="block text-sm font-medium text-muted-foreground mb-2"
                   >
                     Your Email
                   </label>
@@ -166,7 +172,7 @@ export const ContactSection = () => {
                     required
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-secondary/50 border border-border focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all text-foreground placeholder:text-muted-foreground"
+                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-foreground placeholder:text-muted-foreground"
                     placeholder="john@example.com"
                   />
                 </div>
@@ -174,7 +180,7 @@ export const ContactSection = () => {
                 <div>
                   <label
                     htmlFor="message"
-                    className="block text-sm font-medium text-foreground/80 mb-2"
+                    className="block text-sm font-medium text-muted-foreground mb-2"
                   >
                     Message
                   </label>
@@ -184,14 +190,14 @@ export const ContactSection = () => {
                     rows={4}
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-secondary/50 border border-border focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all text-foreground placeholder:text-muted-foreground resize-none"
+                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-foreground placeholder:text-muted-foreground resize-none"
                     placeholder="Your message..."
                   />
                 </div>
 
                 <motion.button
                   type="submit"
-                  className="btn-accent w-full"
+                  className="btn-primary w-full"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
