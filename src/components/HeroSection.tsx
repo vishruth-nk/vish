@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Download, ChevronDown } from "lucide-react";
+import { Mail, Phone, MapPin, Download, ChevronDown, Sparkles } from "lucide-react";
 import profilePhoto from "@/assets/profile-photo.png";
 import { portfolioData } from "@/data/portfolio-data";
 
@@ -7,28 +7,8 @@ export const HeroSection = () => {
   const { personal } = portfolioData;
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Animated Background */}
-      <div className="absolute inset-0" style={{ background: "var(--gradient-hero)" }}>
-        <motion.div
-          className="absolute top-1/4 -left-20 w-96 h-96 bg-accent/10 rounded-full blur-3xl"
-          animate={{
-            x: [0, 50, 0],
-            y: [0, 30, 0],
-          }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-        />
-        <motion.div
-          className="absolute bottom-1/4 -right-20 w-80 h-80 bg-accent/10 rounded-full blur-3xl"
-          animate={{
-            x: [0, -40, 0],
-            y: [0, -40, 0],
-          }}
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        />
-      </div>
-
-      <div className="section-container relative z-10 pt-20">
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+      <div className="section-container relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Text Content */}
           <motion.div
@@ -37,30 +17,53 @@ export const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-center lg:text-left order-2 lg:order-1"
           >
-            <motion.p
+            {/* Status Badge */}
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="text-accent font-medium text-sm md:text-base mb-4 tracking-wide uppercase"
+              className="inline-block animate-float mb-6"
             >
-              Welcome to my portfolio
-            </motion.p>
+              <div className="relative group">
+                <div className="absolute -inset-0.5 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full blur opacity-30 group-hover:opacity-50 transition duration-1000" />
+                <div className="relative px-4 py-2 rounded-full bg-black/40 backdrop-blur-xl border border-white/10">
+                  <span className="gradient-text text-sm font-medium flex items-center gap-2">
+                    <Sparkles className="w-4 h-4 text-indigo-400" />
+                    Ready to Contribute
+                  </span>
+                </div>
+              </div>
+            </motion.div>
             
-            <motion.h1
+            {/* Main Title */}
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="font-display font-bold text-4xl md:text-5xl lg:text-6xl text-primary-foreground mb-4 leading-tight"
+              className="space-y-2 mb-4"
             >
-              Hi, I'm{" "}
-              <span className="block gradient-text">{personal.name}</span>
-            </motion.h1>
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-bold tracking-tight">
+                <span className="relative inline-block">
+                  <span className="absolute -inset-2 bg-gradient-to-r from-indigo-500 to-purple-500 blur-2xl opacity-20" />
+                  <span className="relative gradient-text-white">
+                    Hi, I'm
+                  </span>
+                </span>
+                <br />
+                <span className="relative inline-block mt-2">
+                  <span className="absolute -inset-2 bg-gradient-to-r from-indigo-500 to-purple-500 blur-2xl opacity-20" />
+                  <span className="relative gradient-text">
+                    {personal.name}
+                  </span>
+                </span>
+              </h1>
+            </motion.div>
             
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="text-primary-foreground/80 text-lg md:text-xl mb-2"
+              className="text-muted-foreground text-lg md:text-xl mb-2"
             >
               {personal.title}
             </motion.p>
@@ -69,7 +72,7 @@ export const HeroSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
-              className="text-primary-foreground/60 text-base md:text-lg mb-8 italic"
+              className="text-muted-foreground/70 text-base md:text-lg mb-8 italic"
             >
               "{personal.tagline}"
             </motion.p>
@@ -83,20 +86,20 @@ export const HeroSection = () => {
             >
               <a
                 href={`mailto:${personal.email}`}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-foreground/10 text-primary-foreground/90 text-sm hover:bg-primary-foreground/20 transition-colors"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 backdrop-blur-sm text-muted-foreground text-sm border border-white/10 hover:bg-white/10 hover:border-primary/30 transition-all duration-300"
               >
-                <Mail size={16} />
+                <Mail size={16} className="text-primary" />
                 {personal.email}
               </a>
               <a
                 href={`tel:${personal.phone}`}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-foreground/10 text-primary-foreground/90 text-sm hover:bg-primary-foreground/20 transition-colors"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 backdrop-blur-sm text-muted-foreground text-sm border border-white/10 hover:bg-white/10 hover:border-primary/30 transition-all duration-300"
               >
-                <Phone size={16} />
+                <Phone size={16} className="text-primary" />
                 {personal.phone}
               </a>
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-foreground/10 text-primary-foreground/90 text-sm">
-                <MapPin size={16} />
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 backdrop-blur-sm text-muted-foreground text-sm border border-white/10">
+                <MapPin size={16} className="text-primary" />
                 {personal.location}
               </span>
             </motion.div>
@@ -108,14 +111,14 @@ export const HeroSection = () => {
               transition={{ duration: 0.6, delay: 0.8 }}
               className="flex flex-wrap justify-center lg:justify-start gap-4"
             >
-              <a href="#contact" className="btn-accent">
+              <a href="#contact" className="btn-primary">
                 Get in Touch
                 <Mail size={18} />
               </a>
               <a
                 href="/vishruth_Resume.pdf"
                 download
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-medium bg-primary-foreground/10 text-primary-foreground border border-primary-foreground/20 hover:bg-primary-foreground/20 transition-all duration-300"
+                className="btn-ghost"
               >
                 Download Resume
                 <Download size={18} />
@@ -131,20 +134,24 @@ export const HeroSection = () => {
             className="flex justify-center order-1 lg:order-2"
           >
             <div className="relative">
-              {/* Decorative Ring */}
+              {/* Glow Effect */}
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 blur-3xl opacity-30" />
+              
+              {/* Decorative Rings */}
               <motion.div
-                className="absolute inset-0 rounded-full border-2 border-accent/30"
-                style={{ padding: "1rem" }}
+                className="absolute -inset-4 rounded-full border border-primary/20"
                 animate={{ rotate: 360 }}
                 transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
               />
-              
-              {/* Glow Effect */}
-              <div className="absolute inset-0 rounded-full bg-accent/20 blur-2xl" />
+              <motion.div
+                className="absolute -inset-8 rounded-full border border-accent/10"
+                animate={{ rotate: -360 }}
+                transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+              />
               
               {/* Image Container */}
               <motion.div
-                className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary-foreground/20 shadow-2xl"
+                className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-2 border-white/10 shadow-2xl"
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
               >
@@ -167,7 +174,7 @@ export const HeroSection = () => {
         >
           <motion.a
             href="#about"
-            className="flex flex-col items-center gap-2 text-primary-foreground/60 hover:text-primary-foreground transition-colors"
+            className="flex flex-col items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
           >

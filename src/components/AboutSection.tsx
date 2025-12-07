@@ -10,15 +10,15 @@ export const AboutSection = () => {
   const { objective, personal, strengths, hobbies } = portfolioData;
 
   return (
-    <section id="about" className="section-padding bg-background" ref={ref}>
+    <section id="about" className="section-padding relative" ref={ref}>
       <div className="section-container">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="text-center mb-16"
         >
-          <h2 className="font-display font-bold text-3xl md:text-4xl lg:text-5xl text-foreground mb-4">
+          <h2 className="font-bold text-3xl md:text-4xl lg:text-5xl text-foreground mb-4">
             About <span className="gradient-text">Me</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -26,23 +26,26 @@ export const AboutSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid lg:grid-cols-3 gap-6">
           {/* Objective Card */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="lg:col-span-2 card-glass p-8"
+            className="lg:col-span-2 card-glass-hover p-8"
           >
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
-                <Target className="text-accent" size={24} />
+              <div className="relative group">
+                <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-xl blur opacity-30" />
+                <div className="relative w-12 h-12 rounded-xl bg-card flex items-center justify-center">
+                  <Target className="text-primary" size={24} />
+                </div>
               </div>
-              <h3 className="font-display font-semibold text-xl text-foreground">
+              <h3 className="font-semibold text-xl text-foreground">
                 Career Objective
               </h3>
             </div>
-            <p className="text-foreground/80 leading-relaxed text-lg">
+            <p className="text-muted-foreground leading-relaxed text-lg">
               {objective}
             </p>
           </motion.div>
@@ -52,13 +55,16 @@ export const AboutSection = () => {
             initial={{ opacity: 0, y: 40 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="card-glass p-8"
+            className="card-glass-hover p-8"
           >
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
-                <Languages className="text-accent" size={24} />
+              <div className="relative group">
+                <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-xl blur opacity-30" />
+                <div className="relative w-12 h-12 rounded-xl bg-card flex items-center justify-center">
+                  <Languages className="text-primary" size={24} />
+                </div>
               </div>
-              <h3 className="font-display font-semibold text-xl text-foreground">
+              <h3 className="font-semibold text-xl text-foreground">
                 Languages
               </h3>
             </div>
@@ -76,13 +82,16 @@ export const AboutSection = () => {
             initial={{ opacity: 0, y: 40 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="lg:col-span-2 card-glass p-8"
+            className="lg:col-span-2 card-glass-hover p-8"
           >
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
-                <Sparkles className="text-accent" size={24} />
+              <div className="relative group">
+                <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-xl blur opacity-30" />
+                <div className="relative w-12 h-12 rounded-xl bg-card flex items-center justify-center">
+                  <Sparkles className="text-primary" size={24} />
+                </div>
               </div>
-              <h3 className="font-display font-semibold text-xl text-foreground">
+              <h3 className="font-semibold text-xl text-foreground">
                 Professional Strengths
               </h3>
             </div>
@@ -93,9 +102,9 @@ export const AboutSection = () => {
                   initial={{ opacity: 0, x: -20 }}
                   animate={isInView ? { opacity: 1, x: 0 } : {}}
                   transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
-                  className="flex items-start gap-3 text-foreground/80"
+                  className="flex items-start gap-3 text-muted-foreground"
                 >
-                  <span className="w-2 h-2 rounded-full bg-accent mt-2 shrink-0" />
+                  <span className="w-2 h-2 rounded-full bg-primary mt-2 shrink-0" />
                   {strength}
                 </motion.li>
               ))}
@@ -107,14 +116,14 @@ export const AboutSection = () => {
             initial={{ opacity: 0, y: 40 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="card-glass p-8"
+            className="card-glass-hover p-8"
           >
-            <h3 className="font-display font-semibold text-xl text-foreground mb-4">
+            <h3 className="font-semibold text-xl text-foreground mb-4">
               Hobbies & Interests
             </h3>
             <ul className="space-y-3">
               {hobbies.map((hobby) => (
-                <li key={hobby} className="flex items-center gap-3 text-foreground/80">
+                <li key={hobby} className="flex items-center gap-3 text-muted-foreground">
                   <span className="w-2 h-2 rounded-full bg-accent shrink-0" />
                   {hobby}
                 </li>

@@ -26,10 +26,12 @@ export const BackToTop = () => {
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.5 }}
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 z-50 w-12 h-12 rounded-full bg-accent text-accent-foreground shadow-lg flex items-center justify-center hover:scale-110 transition-transform animate-pulse-glow"
+          className="fixed bottom-8 right-8 z-50 w-12 h-12 rounded-full flex items-center justify-center hover:scale-110 transition-transform"
+          style={{ background: "var(--gradient-primary)" }}
           aria-label="Back to top"
         >
-          <ArrowUp size={24} />
+          <div className="absolute inset-0 rounded-full animate-pulse-glow" />
+          <ArrowUp size={24} className="text-white relative z-10" />
         </motion.button>
       )}
     </AnimatePresence>
