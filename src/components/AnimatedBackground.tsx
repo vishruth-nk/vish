@@ -31,22 +31,22 @@ export const AnimatedBackground = () => {
         {/* Purple blob - top left */}
         <div
           ref={(ref) => { blobRefs.current[0] = ref; }}
-          className="absolute top-0 -left-4 w-72 h-72 md:w-96 md:h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-blob"
+          className="absolute top-0 -left-4 w-72 h-72 md:w-96 md:h-96 bg-purple-500 rounded-full filter blur-[128px] opacity-40 animate-blob"
         />
-        {/* Indigo blob - top left */}
+        {/* Indigo blob - top right */}
         <div
           ref={(ref) => { blobRefs.current[1] = ref; }}
-          className="absolute top-0 -left-4 w-72 h-72 md:w-96 md:h-96 bg-indigo-500 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-blob animation-delay-2000"
+          className="absolute top-20 right-20 w-72 h-72 md:w-96 md:h-96 bg-indigo-500 rounded-full filter blur-[128px] opacity-30 animate-blob animation-delay-2000"
         />
         {/* Indigo blob - bottom right */}
         <div
           ref={(ref) => { blobRefs.current[2] = ref; }}
-          className="absolute bottom-0 right-20 w-72 h-72 md:w-96 md:h-96 bg-indigo-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-blob animation-delay-4000"
+          className="absolute bottom-0 right-20 w-72 h-72 md:w-96 md:h-96 bg-indigo-600 rounded-full filter blur-[128px] opacity-35 animate-blob animation-delay-4000"
         />
-        {/* Purple blob - bottom right */}
+        {/* Purple blob - bottom left */}
         <div
           ref={(ref) => { blobRefs.current[3] = ref; }}
-          className="absolute -bottom-20 right-20 w-72 h-72 md:w-96 md:h-96 bg-purple-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-blob"
+          className="absolute -bottom-20 left-20 w-72 h-72 md:w-96 md:h-96 bg-purple-600 rounded-full filter blur-[128px] opacity-40 animate-blob"
         />
       </div>
     </div>
