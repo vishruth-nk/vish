@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Download, ChevronDown, Sparkles, Instagram, Facebook, Linkedin, Twitter, MessageCircle } from "lucide-react";
+import { Mail, Phone, MapPin, Download, ChevronDown, Sparkles, Instagram, Facebook, Linkedin, Twitter, MessageCircle, Github } from "lucide-react";
 import profilePhoto from "@/assets/profile-photo.png";
 import { portfolioData } from "@/data/portfolio-data";
 export const HeroSection = () => {
@@ -166,6 +166,9 @@ export const HeroSection = () => {
               </a>
               <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/50 hover:bg-white/10 transition-all duration-300">
                 <Linkedin size={18} />
+              </a>
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/50 hover:bg-white/10 transition-all duration-300">
+                <Github size={18} />
               </a>
             </motion.div>
           </motion.div>
