@@ -54,11 +54,8 @@ export const HeroSection = () => {
             delay: 0.4
           }} className="space-y-2 mb-4">
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-bold tracking-tight">
-                <span className="relative inline-block">
-                  <span className="absolute -inset-2 bg-gradient-to-r from-indigo-500 to-purple-500 blur-2xl opacity-20" />
-                  <span className="relative text-foreground">
-                    Hi, I'm
-                  </span>
+                <span className="text-muted-foreground">
+                  Hi, I'm
                 </span>
                 <br />
                 <span className="relative inline-block mt-2">
