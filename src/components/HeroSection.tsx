@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Download, ChevronDown, Sparkles } from "lucide-react";
+import { Mail, Phone, MapPin, Download, ChevronDown, Sparkles, Instagram, Facebook, Linkedin, Twitter } from "lucide-react";
 import profilePhoto from "@/assets/profile-photo.png";
 import { portfolioData } from "@/data/portfolio-data";
 export const HeroSection = () => {
@@ -136,6 +136,34 @@ export const HeroSection = () => {
               <a href="/vishruth_Resume.pdf" download className="btn-ghost">
                 Download Resume
                 <Download size={18} />
+              </a>
+            </motion.div>
+
+            {/* Social Icons */}
+            <motion.div initial={{
+            opacity: 0,
+            y: 20
+          }} animate={{
+            opacity: 1,
+            y: 0
+          }} transition={{
+            duration: 0.6,
+            delay: 0.9
+          }} className="flex justify-center lg:justify-start gap-4 mt-6">
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/50 hover:bg-white/10 transition-all duration-300">
+                <Twitter size={18} />
+              </a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/50 hover:bg-white/10 transition-all duration-300">
+                <Instagram size={18} />
+              </a>
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/50 hover:bg-white/10 transition-all duration-300">
+                <Facebook size={18} />
+              </a>
+              <a href="https://wa.me/918088748133" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/50 hover:bg-white/10 transition-all duration-300">
+                <Phone size={18} />
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/50 hover:bg-white/10 transition-all duration-300">
+                <Linkedin size={18} />
               </a>
             </motion.div>
           </motion.div>
