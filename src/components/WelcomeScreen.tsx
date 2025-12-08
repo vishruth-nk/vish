@@ -122,7 +122,7 @@ export const WelcomeScreen = ({ onLoadingComplete }: WelcomeScreenProps) => {
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 backdrop-blur-sm border border-white/10">
                 <span className="text-primary">⊕</span>
                 <span className="text-muted-foreground text-sm sm:text-base">
-                  <TypewriterEffect text="vishruth.portfolio" />
+                  <TypewriterEffect text="vishruth.github.io" />
                 </span>
               </div>
             </motion.div>
