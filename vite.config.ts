@@ -5,10 +5,15 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  // 👇 IMPORTANT for GitHub Pages project site
+  // repo name = SSSBlov, so base should be /SSSBlov/
+  base: "/vish/",
+
   server: {
     host: "::",
     port: 8080,
   },
+
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {
     alias: {
