@@ -2,12 +2,13 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { GraduationCap, Calendar, Award } from "lucide-react";
-import { portfolioData } from "@/data/portfolio-data";
+import { usePortfolio } from "@/hooks/usePortfolio";
 
 export const EducationSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const { education } = portfolioData;
+  const { data } = usePortfolio();
+  const { education } = data;
 
   return (
     <section id="education" className="section-padding relative" ref={ref}>

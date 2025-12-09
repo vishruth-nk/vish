@@ -2,12 +2,13 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Star, Award, Lightbulb } from "lucide-react";
-import { portfolioData } from "@/data/portfolio-data";
+import { usePortfolio } from "@/hooks/usePortfolio";
 
 export const ActivitiesSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const { activities, achievements } = portfolioData;
+  const { data } = usePortfolio();
+  const { activities, achievements } = data;
 
   return (
     <section id="activities" className="section-padding relative" ref={ref}>

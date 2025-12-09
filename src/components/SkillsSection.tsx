@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Briefcase, Code, Users } from "lucide-react";
-import { portfolioData } from "@/data/portfolio-data";
+import { usePortfolio } from "@/hooks/usePortfolio";
 
 const categoryIcons = {
   Business: Briefcase,
@@ -19,7 +19,8 @@ const categoryGradients = {
 export const SkillsSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const { skills } = portfolioData;
+  const { data } = usePortfolio();
+  const { skills } = data;
 
   const groupedSkills = skills.reduce(
     (acc, skill) => {
