@@ -4,7 +4,7 @@ import { useRef, useState } from "react";
 import { Mail, Phone, MapPin, Send, Download } from "lucide-react";
 import { portfolioData } from "@/data/portfolio-data";
 import { toast } from "@/hooks/use-toast";
-import { supabase } from "@/lib/supabaseClient"; // 👈 NEW
+import { supabase } from "@/integrations/supabase/client";
 
 export const ContactSection = () => {
   const ref = useRef(null);
