@@ -133,7 +133,7 @@ export const HeroSection = () => {
                 Get in Touch
                 <Mail size={18} />
               </a>
-              <a href="/vishruth_Resume.pdf" download className="btn-ghost">
+              <a href="/vish/public/vishruth_Resume.pdf" download className="btn-ghost">
                 Download Resume
                 <Download size={18} />
               </a>
