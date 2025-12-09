@@ -2,12 +2,15 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 
-export default defineConfig({
-  base: "/vish/", // repo name for GitHub Pages
+export default defineConfig(({ mode }) => ({
+  base: mode === "production" ? "/vish/" : "/",
+  server: {
+    port: 8080,
+  },
   plugins: [react()],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"), // 👈 so "@/components/..." works
+      "@": path.resolve(__dirname, "./src"),
     },
   },
-});
+}));
