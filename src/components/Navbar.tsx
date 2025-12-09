@@ -80,7 +80,7 @@ export const Navbar = () => {
               </li>
             ))}
             <li className="ml-4">
-              <a href="/vishruth_Resume.pdf" download className="btn-primary text-sm py-2 px-4">
+              <a href="/vish/public/vishruth_Resume.pdf" download className="btn-primary text-sm py-2 px-4">
                 Download CV
               </a>
             </li>
